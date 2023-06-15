@@ -1,0 +1,25 @@
+<p>inicio-sesion works!</p>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    chatear
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">iniciar sesion</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <router-outlet></router-outlet>
+        </div>
+        <div class="modal-footer">
+          <a routerLink="login" routerLinkActive="active" class="btn btn-outline-primary" >login</a>
+          <a routerLink="entrar-sin-registro" routerLinkActive="active" class="btn btn-outline-secondary" >Entrar sin Registro</a>
+          <a routerLink="registrarse" routerLinkActive="active" class="btn btn-outline-info">Registrarse</a>
+        </div>
+      </div>
+    </div>
+  </div>

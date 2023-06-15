@@ -1,0 +1,37 @@
+
+<!--form group-->
+<form [formGroup]="form">
+    <!-- input name-->
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">name</label>
+         <input type="text" class="form-control"  formControlName="nombre" id="exampleFormControlInput1" >
+         
+    </div>
+    <!--end input name-->
+    
+
+    <!-- input img-->
+    <div class="mb-3">
+        <label for="exampleFormControlInput4" class="form-label">imagen</label>
+        <input type="file" class="form-control" (change)="onFileSelected($event)" id="exampleFormControlInput4" >
+    </div>
+    <!-- end input img-->
+    <!-- previsualizacion de la imagen -->
+    <div *ngIf="previewImage" class="preview-container">
+        <img [src]="previewImage" alt="Vista previa de la imagen" class="preview-image">
+      </div>
+    <!-- fin previsualziacion de la imagen-->
+    <!-- previsualizacion de la imagen -->
+    <!-- mensaje excedio el limite de size de la imagen -->
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+    <!-- fin mensaje excedio el limite de size de la imagen -->
+
+    <!-- button to regist-->
+    <div class="login-botones">
+	    <button  type="button"  class="btn btn-primary" (click)="guardarCambios()">guardarCambios</button>
+    </div>
+    
+</form>
+<!-- end form group-->

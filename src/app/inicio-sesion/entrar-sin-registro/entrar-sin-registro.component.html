@@ -1,0 +1,29 @@
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+    <div>
+      <label for="nombre" class="form-label">Nombre:</label>
+      <input type="text" id="nombre" formControlName="nombre" class="form-control" aria-labelledby="passwordHelpBlock">
+      <div *ngIf="!nombreUsuarioDisponible"class="alert alert-danger" role="alert">
+        El nombre de usuario no está disponible. 
+      </div>
+     
+    </div>
+    <div>
+      <label>Sexo:</label>
+      <div>
+        <label for="sexo-masculino">
+          <input type="radio" id="sexo-masculino" name="sexo" value="hombre" formControlName="sexo" required>
+          Masculino
+        </label>
+      </div>
+      <div>
+        <label for="sexo-femenino">
+          <input type="radio" id="sexo-femenino" name="sexo" value="mujer" formControlName="sexo" required>
+          Femenino
+        </label>
+      </div>
+      <!-- <div *ngIf="form.get('sexo').invalid && form.get('sexo').touched">
+        <span *ngIf="form.get('sexo').errors?.required as error">El sexo es requerido.</span>
+      </div> -->
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Enviar</button>
+  </form>

@@ -1,0 +1,22 @@
+:host{
+    display: block;
+    width: 100%;   
+    overflow-y: scroll;
+}
+.chat-box {
+    height: 50vh;
+    overflow-y: scroll;
+    background-color:white;
+  }
+.fixed-botton-mia{
+    position: fixed;
+    bottom: o;
+
+    max-width: 80%;
+}  
+
+@media (max-width: 770px) {
+    .chat-box {
+        height: 300px;
+      }
+  }

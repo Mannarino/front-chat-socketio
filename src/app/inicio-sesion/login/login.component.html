@@ -1,0 +1,44 @@
+  <!-- form grup-->
+  <form [formGroup]="form">
+    <!-- input email adress-->
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <input type="email" class="form-control" formControlName="email" id="exampleFormControlInput1" placeholder="name@example.com">
+      <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" >
+        <div *ngIf="email?.errors?.required" class="alert alert-danger">
+            email is required.
+        </div>
+        <div *ngIf="email?.errors?.email" class="alert alert-danger">
+            has to be a email.
+        </div>  
+      </div> 
+    </div>
+    <!--end input email adress-->
+    <!-- input password-->
+    <div class="mb-3">
+      <label for="exampleFormControlInput2" class="form-label">password</label>
+      <input type="password" class="form-control"  formControlName="password" id="exampleFormControlInput2" >
+    </div>
+    <!--end input password-->
+    <!-- button of login-->
+    <div class="login-botones">
+      <button type="button" class="btn btn-primary" 
+      [disabled]="!form.valid"   (click)="login()">loguin</button>
+    </div>
+    <!--end button of login-->
+  </form>
+  <!--end form grup-->
+  <!-- <img *ngIf="imgCargando" src="./assets/cargando.gif" /> -->
+  <!-- messages of validation-->
+  <div class="alert alert-danger" *ngIf="LoggedBadly" role="alert">
+   incorrect log in, your password or email is wrong,
+   try again
+  </div>
+  <div class="alert alert-danger" *ngIf="serverInternalError" role="alert">
+    the server is not working right now, some problem are happening, try more later
+   </div>
+ 
+  <!-- end messages of validation-->
+  
+  <!-- boton de invitado sin registro -->
+  <!-- <button type="button" class="btn btn-success btn-lg sin-registro" (click)="entrarSinRegistro()">entrar sin registro</button> -->

@@ -1,0 +1,73 @@
+
+<!-- form grup-->
+<form [formGroup]="formRegister">
+     <!-- input nombre -->
+    <div class="mb-3">
+        <label for="exampleFormControlInput" class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre" id="exampleFormControlInput" placeholder="Nombre">
+        <div *ngIf="nombre?.invalid && (nombre?.dirty || nombre?.touched)">
+          <div *ngIf="nombre?.errors?.required" class="alert alert-danger">
+              Nombre es requerido.
+          </div>
+        </div>
+    </div>
+    <!-- end input nombre -->
+    <!-- input email adress-->
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <input type="email" class="form-control" formControlName="email" id="exampleFormControlInput1" placeholder="name@example.com">
+      <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" >
+        <div *ngIf="email?.errors?.required" class="alert alert-danger">
+            email is required.
+        </div>
+        <div *ngIf="email?.errors?.email" class="alert alert-danger">
+            has to be a email.
+        </div>  
+      </div> 
+    </div>
+    <!--end input email adress-->
+    <!-- input password-->
+    <div class="mb-3">
+      <label for="exampleFormControlInput2" class="form-label">password</label>
+      <input type="password" class="form-control"  formControlName="password" id="exampleFormControlInput2" >
+      <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+        <div *ngIf="password?.errors?.required" class="alert alert-danger">
+            password es requerido.
+        </div>
+      </div>
+    </div>
+    <!--end input password-->
+    <!-- input sexo -->
+    <div class="mb-3">
+        <label class="form-label">Sexo</label>
+        <div class="form-check">
+        <input class="form-check-input" type="radio" id="sexoHombre" value="hombre" formControlName="sexo">
+        <label class="form-check-label" for="sexoHombre">
+            Hombre
+        </label>
+        </div>
+        <div class="form-check">
+        <input class="form-check-input" type="radio" id="sexoMujer" value="mujer" formControlName="sexo">
+        <label class="form-check-label" for="sexoMujer">
+            Mujer
+        </label>
+        </div>
+    </div>
+    <!-- end input sexo -->
+    <!-- button of login-->
+    <div class="login-botones">
+      <button type="button" class="btn btn-primary" 
+      [disabled]="!formRegister.valid"   (click)="registrarse()">registrase</button>
+    </div>
+    <!--end button of login-->
+  </form>
+  <!--end form grup-->
+  <!-- <img *ngIf="imgCargando" src="./assets/cargando.gif" /> -->
+  <!-- messages of validation-->
+  <div class="alert alert-danger" *ngIf="serverInternalError" role="alert">
+    the server is not working right now, some problem are happening, try more later
+   </div>
+ 
+  <!-- end messages of validation-->
+  
+  
