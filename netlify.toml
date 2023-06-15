@@ -1,2 +1,2 @@
 [build]
-  command = "ng build --openssl-legacy-provider"
+  command = "NODE_OPTIONS=--openssl-legacy-provider ng build"
