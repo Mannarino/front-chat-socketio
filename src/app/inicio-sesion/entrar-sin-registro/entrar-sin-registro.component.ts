@@ -11,6 +11,7 @@ import { NetworkBySocketsIoService } from 'src/app/services/network-by-sockets-i
 })
 export class EntrarSinRegistroComponent implements OnInit {
   nombreUsuarioDisponible: boolean= true
+  wait = false
   form = new FormGroup({
     nombre: new FormControl('',[Validators.required,]),
     sexo: new FormControl('', Validators.required)
@@ -24,6 +25,7 @@ export class EntrarSinRegistroComponent implements OnInit {
   }
 
   submitForm(){
+    this.wait = true
     let urlImagen =''
     if(this.form.get('sexo')?.value==='mujer'){
         urlImagen= 'mujer.jpg'

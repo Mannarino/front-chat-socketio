@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   LoggedBadly= false
   serverInternalError=false
   imgCargando = false 
+  wait=false
   form = new FormGroup({
     email: new FormControl('',[Validators.required, Validators.email]),
     password: new FormControl('', Validators.required)
@@ -27,6 +28,7 @@ export class LoginComponent implements OnInit {
   get password() { return this.form.get('password'); }
 
   login(){
+    this.wait=true
     this.netwokBySockets.login(this.form.value)
     
   }

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
  // url_endpoint : "http://localhost:3000"
-  url_endpoint : "https://chat-io-dswk.onrender.com/"
+  url_endpoint : "https://chat-io-dswk.onrender.com"
 };
 
 
